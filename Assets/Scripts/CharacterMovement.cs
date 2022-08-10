@@ -26,8 +26,6 @@ namespace JuanPayan
         }
 
 
-
-
         // Update is called once per frame
         void FixedUpdate()
         {
@@ -37,12 +35,12 @@ namespace JuanPayan
             MoveCharacter(new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")));
 
         }
+
         private void MoveCharacter(Vector3 direction)
         {
             rigidBody.AddForce(direction * _speed, ForceMode.Impulse);
 
         }//Closes MoveCharacter method
-
 
 
     }//Closes CharacterMovement class

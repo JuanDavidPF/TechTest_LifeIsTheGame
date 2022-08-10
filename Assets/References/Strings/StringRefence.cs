@@ -21,10 +21,15 @@ namespace JuanPayan.CodeSnippets
             {
                 if (value == m_value) return;
                 m_value = value;
-                OnValueChanged?.Invoke(value);
+                InvokeValueEvent();
             }
 
         }
+
+        public void InvokeValueEvent()
+        {
+            OnValueChanged?.Invoke(Value);
+        }//Closes InvokeValueEvent method
 
     }//Closes StringReference Class
 

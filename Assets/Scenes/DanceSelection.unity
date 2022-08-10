@@ -888,8 +888,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1470072165}
-  - {fileID: 1657667492}
   - {fileID: 920020945}
+  - {fileID: 1657667492}
   m_Father: {fileID: 1243473189}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1767,7 +1767,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 283984406}
         m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: Play
+        m_MethodName: SetTrigger
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2205,7 +2205,7 @@ GameObject:
   - component: {fileID: 920020947}
   - component: {fileID: 920020946}
   m_Layer: 5
-  m_Name: Button_SetAnimatorState_HipHopDance
+  m_Name: Button_SetAnimatorState_HipHop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2225,7 +2225,7 @@ RectTransform:
   m_Children:
   - {fileID: 824840481}
   m_Father: {fileID: 224113321}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2285,7 +2285,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: AnimatorState_HipHopDance
+          m_StringArgument: HipHop
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &920020947
@@ -3045,7 +3045,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: AnimatorState_House
+          m_StringArgument: House
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1470072167
@@ -3861,7 +3861,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1474351257}
         m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: Play
+        m_MethodName: SetTrigger
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3904,7 +3904,7 @@ RectTransform:
   m_Children:
   - {fileID: 532928778}
   m_Father: {fileID: 224113321}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3964,7 +3964,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: AnimatorState_Macarena
+          m_StringArgument: Macarena
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1657667494
@@ -4300,7 +4300,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1908337052}
         m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: Play
+        m_MethodName: SetTrigger
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

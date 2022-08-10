@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aced28883eb4284cbd9b02b24001069, type: 3}
   m_Name: StringReference_PlayerCurrentDance
   m_EditorClassIdentifier: 
-  m_value: DanceSelection
+  m_value: AnimatorState_House

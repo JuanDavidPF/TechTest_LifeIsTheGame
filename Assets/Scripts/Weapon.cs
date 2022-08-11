@@ -10,6 +10,8 @@ namespace JuanPayan
 
     public class Weapon : MonoBehaviour, IGrabbable
     {
+        public WeaponData data;
+
         private Vector3 originalScale;
 
         private Rigidbody m_objectRigidBody;
@@ -30,7 +32,12 @@ namespace JuanPayan
             if (m_objectRigidBody)
             {
                 m_objectRigidBody.isKinematic = false;
-                m_objectRigidBody.AddForceAtPosition(transform.forward * 10, transform.position, ForceMode.Impulse);
+
+
+
+
+
+                m_objectRigidBody.AddForceAtPosition(transform.forward * 20, transform.position, ForceMode.Impulse);
             }
 
             gameObject.SetLayerRecursively(0);

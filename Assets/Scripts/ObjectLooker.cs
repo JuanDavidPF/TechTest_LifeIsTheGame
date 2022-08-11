@@ -11,6 +11,7 @@ namespace JuanPayan
         // [SerializeField] private KeyCode grabKey;
         // [SerializeField] private KeyCode dropKey;
         [SerializeField] GameObjectReference objectBeingLooked;
+        [SerializeField] private List<string> allowedTags = new List<string>();
         [SerializeField] private float reachDistance = 4f;
         RaycastHit grabberInformation;
 
@@ -22,9 +23,12 @@ namespace JuanPayan
         {
             // TryToGrab();
             // if (Input.GetKeyDown(dropKey)) Drop();
+            if (objectBeingLooked) objectBeingLooked.Value = null;
 
             if (Physics.Raycast(transform.position, transform.forward, out grabberInformation, reachDistance))
             {
+
+                if (!allowedTags.Contains(grabberInformation.collider.gameObject.tag)) return;
 
                 if (objectBeingLooked) objectBeingLooked.Value = grabberInformation.collider.gameObject as GameObject;
                 // string tag = grabberInformation.collider.gameObject.tag;

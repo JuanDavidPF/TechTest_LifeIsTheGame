@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3aced28883eb4284cbd9b02b24001069, type: 3}
-  m_Name: StringReference_PlayerCurrentDance
+  m_Script: {fileID: 11500000, guid: 3973bf3f356669a4aa5a041600e0c686, type: 3}
+  m_Name: ObjectBeingLookedAt
   m_EditorClassIdentifier: 
-  m_value: House
+  m_value: {fileID: 0}

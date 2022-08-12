@@ -23,6 +23,7 @@ namespace JuanPayan
 
         protected override void OnCollisionEnter(Collision other)
         {
+            rigidbody.isKinematic = true;
             Destroy(other.gameObject);
             EmitParticles();
         }

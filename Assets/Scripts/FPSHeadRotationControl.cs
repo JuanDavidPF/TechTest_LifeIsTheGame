@@ -31,7 +31,7 @@ namespace JuanPayan
 
         private void Awake()
         {
-            Cursor.lockState = CursorLockMode.Locked;
+
             headTransform = transform;
         }
 

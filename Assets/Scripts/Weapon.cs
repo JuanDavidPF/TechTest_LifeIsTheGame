@@ -16,12 +16,35 @@ namespace JuanPayan
 
         private Rigidbody m_objectRigidBody;
 
+        public Transform nozzleTransform;
+
+        public ParticleSystem nozzleFlash;
+
+        private float rate;
+
+        private Queue<Rigidbody> magazine = new Queue<Rigidbody>();
+
         private void Awake()
         {
+
             m_objectRigidBody = m_objectRigidBody ? m_objectRigidBody : GetComponent<Rigidbody>();
             originalScale = transform.localScale;
+
+            LoadBulletsPool();
         }//Closes Awake method
 
+
+        private void Update()
+        {
+            HandleWeaponRate();
+        }
+
+
+        private void HandleWeaponRate()
+        {
+            if (rate > 0) rate -= Time.deltaTime;
+            if (rate < 0) rate = 0;
+        }
 
         public void Drop()
         {
@@ -32,10 +55,6 @@ namespace JuanPayan
             if (m_objectRigidBody)
             {
                 m_objectRigidBody.isKinematic = false;
-
-
-
-
 
                 m_objectRigidBody.AddForceAtPosition(transform.forward * 20, transform.position, ForceMode.Impulse);
             }
@@ -58,6 +77,45 @@ namespace JuanPayan
 
             gameObject.SetLayerRecursively(7);
         }//Closes Drop method
+
+        public void LoadBulletsPool()
+        {
+            if (!data || !data.bullet || !nozzleTransform) return;
+
+            for (int i = 0; i < data.magazineSize; i++)
+            {
+                GameObject bullet = Instantiate(data.bullet, nozzleTransform.position, transform.rotation);
+                bullet.SetActive(false);
+                magazine.Enqueue(bullet.GetComponent<Rigidbody>());
+            }
+
+        }//Closes LoadBulletsPool method
+
+
+
+        public void Shoot()
+        {
+            if (!data || !nozzleTransform) return;
+            if (rate > 0) return;
+
+            if (nozzleFlash) nozzleFlash.Play();
+            rate = data.cooldown;
+
+
+            Rigidbody bullet = magazine.Dequeue();
+            magazine.Enqueue(bullet);
+
+            bullet.velocity = Vector3.zero;
+            bullet.transform.position = nozzleTransform.position;
+            bullet.transform.rotation = nozzleTransform.rotation;
+
+            bullet.gameObject.SetActive(true);
+            bullet.AddForce(nozzleTransform.forward * data.firePower, ForceMode.Impulse);
+
+
+        }//Closes Shoot Method
+
+
 
 
     }//Closes Pickeable class
